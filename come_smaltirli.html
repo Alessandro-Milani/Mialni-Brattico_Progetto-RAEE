@@ -13,14 +13,63 @@
         .back-btn { display: inline-block; margin: 20px 0 10px; padding: 10px 24px; background-color: #bec5ad; border: none; font-weight: bold; cursor: pointer; text-decoration: none; color: black; }
         h2.page-title { background-color: #bec5ad; text-align: center; margin: 0; padding: 10px 0; }
         h3 { color: #2e5e3e; }
+
+        /* ── MINIGAME ── */
+        #minigame { background-color: #bec5ad; padding: 16px 20px; margin: 12px 0; }
+        #minigame h3 { color: #2e5e3e; margin-top: 0; text-align: center; font-size: 18px; }
+        #mg-start-wrap { text-align: center; margin-bottom: 10px; }
+        #mg-start-btn { padding: 9px 28px; background: #519872; color: #fff; border: none; font-size: 14px; font-weight: bold; cursor: pointer; }
+        #mg-start-btn:hover { background: #2e5e3e; }
+        #mg-play-area { display: none; }
+        #mg-stats { display: flex; justify-content: center; gap: 14px; margin-bottom: 8px; font-size: 13px; flex-wrap: wrap; }
+        #mg-stats span { background: #d6dbc9; padding: 4px 12px; border-left: 4px solid #519872; }
+        #mg-stats strong { color: #2e5e3e; }
+        #mg-timer-wrap { height: 5px; background: #d6dbc9; margin-bottom: 10px; }
+        #mg-timer-bar { height: 100%; width: 100%; background: #519872; transition: width .1s linear, background .3s; }
+        #mg-conveyor { background: #d6dbc9; padding: 14px; margin-bottom: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        #mg-conveyor-label { font-size: 12px; color: #444; text-align: center; }
+        #mg-card { width: 140px; height: 90px; background: #bec5ad; border-left: 5px solid #519872; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: grab; user-select: none; transition: transform .15s; padding: 10px; }
+        #mg-card.dragging { opacity: .45; transform: scale(.93); }
+        #mg-emoji { font-size: 28px; line-height: 1; }
+        #mg-name { font-size: 13px; font-weight: bold; text-align: center; color: #222; }
+        #mg-cats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .mg-cat { background: #d6dbc9; border-left: 5px solid #519872; padding: 10px 8px; display: flex; flex-direction: column; align-items: center; gap: 5px; min-height: 90px; justify-content: center; cursor: pointer; transition: background .18s; user-select: none; }
+        .mg-cat.over { background: #b5caac; }
+        .mg-cat.correct { background: #a8d5a2; border-left-color: #2e5e3e; animation: mg-pulse .3s; }
+        .mg-cat.wrong { background: #f5c0bc; border-left-color: #a93226; animation: mg-shake .3s; }
+        @keyframes mg-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+        @keyframes mg-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+        .mg-cat-emoji { font-size: 22px; line-height: 1; }
+        .mg-cat-name { font-size: 12px; font-weight: bold; color: #222; text-align: center; }
+        .mg-cat-sub { font-size: 11px; color: #555; text-align: center; }
+        #mg-feedback { text-align: center; font-size: 13px; min-height: 20px; margin-top: 8px; color: #444; }
+        #mg-feedback.ok { color: #2e5e3e; font-weight: bold; }
+        #mg-feedback.err { color: #a93226; font-weight: bold; }
+        #mg-end { display: none; text-align: center; padding: 18px; background: #d6dbc9; margin-top: 10px; }
+        #mg-end h3 { color: #2e5e3e; margin-bottom: 6px; }
+        #mg-end p { font-size: 13px; color: #333; margin-bottom: 12px; }
+        #mg-end button { padding: 8px 22px; background: #519872; color: #fff; border: none; font-size: 13px; font-weight: bold; cursor: pointer; }
+        #mg-end button:hover { background: #2e5e3e; }
     </style>
 </head>
 <body>
     <h2 class="page-title">Come smaltirli</h2>
     <div class="w3-container" style="padding: 16px;">
+
         <div class="content-box">
-            <p>Portali nei <strong>centri di raccolta</strong> comunali o sfrutta il ritiro gratuito nei negozi (1 contro 1 o 1 contro 0 per piccoli dispositivi).</p>
+            <p>Portali nei <strong>centri di raccolta</strong> comunali o sfrutta il ritiro gratuito nei negozi .Una volta che un dispositivo elettronico smette di funzionare, il cittadino può portarlo nei centri di raccolta messi a disposizione dal Comune!
+Qui verrà smontato e smistato in base ai materiali che lo compongono. 
+
+
+
+
+
+
+
+In alternativa, i negozi sono OBBLIGATI per legge al ritiro gratuito: 
+Per i dispositivi con lato più lungo entro 25 cm si può consegnare senza alcun obbligo di acquisto, mentre per gli apparecchi più grandi esiste il servizio "1 contro 1", che permette di restituire il vecchio al momento dell'acquisto del nuovo. Per chi non riesce a spostarsi, è possibile richiedere il ritiro a domicilio, soprattutto per i pezzi più ingombranti. Una volta raccolti, i RAEE vengono portati in impianti specializzati dove subiscono una bonifica per eliminare i componenti pericolosi, poi vengono tritati, separati per materiale e infine avviati al recupero delle materie prime riutilizzabili.</p>
         </div>
+
         <h3>Il percorso del RAEE</h3>
         <ul class="step-list">
             <li><strong>1 - Raccolta:</strong> Centro di raccolta o negozio.</li>
@@ -28,7 +77,227 @@
             <li><strong>3 - Bonifica:</strong> Rimozione sostanze pericolose.</li>
             <li><strong>4 - Recupero:</strong> Materie prime rimesse in circolo.</li>
         </ul>
+
+        <!-- MINIGAME -->
+        <div id="minigame">
+            <h3>♻️ MINIGAME — Smista i RAEE</h3>
+
+            <div id="mg-start-wrap">
+                <button id="mg-start-btn">▶ START</button>
+            </div>
+
+            <div id="mg-play-area">
+                <div id="mg-stats">
+                    <span>Punti <strong id="mg-score">0</strong></span>
+                    <span>Errori <strong id="mg-errors">0</strong></span>
+                    <span><strong id="mg-remaining">10</strong> rimasti</span>
+                </div>
+
+                <div id="mg-timer-wrap"><div id="mg-timer-bar"></div></div>
+
+                <div id="mg-conveyor">
+                    <div id="mg-conveyor-label">Trascina l'oggetto nella categoria giusta (o tocca la categoria)</div>
+                    <div id="mg-card" draggable="true">
+                        <div id="mg-emoji">📱</div>
+                        <div id="mg-name">Smartphone</div>
+                    </div>
+                </div>
+
+                <div id="mg-cats">
+                    <div class="mg-cat" data-cat="grandi"
+                        ondragover="event.preventDefault();this.classList.add('over')"
+                        ondragleave="this.classList.remove('over')"
+                        ondrop="mgDrop(event,this)"
+                        onclick="mgTap(this)">
+                        <div class="mg-cat-emoji">🧊</div>
+                        <div class="mg-cat-name">Grandi elettrodomestici</div>
+                        <div class="mg-cat-sub">Frigoriferi, lavatrici…</div>
+                    </div>
+                    <div class="mg-cat" data-cat="illuminazione"
+                        ondragover="event.preventDefault();this.classList.add('over')"
+                        ondragleave="this.classList.remove('over')"
+                        ondrop="mgDrop(event,this)"
+                        onclick="mgTap(this)">
+                        <div class="mg-cat-emoji">💡</div>
+                        <div class="mg-cat-name">Illuminazione</div>
+                        <div class="mg-cat-sub">Lampade, LED, neon…</div>
+                    </div>
+                    <div class="mg-cat" data-cat="piccoli"
+                        ondragover="event.preventDefault();this.classList.add('over')"
+                        ondragleave="this.classList.remove('over')"
+                        ondrop="mgDrop(event,this)"
+                        onclick="mgTap(this)">
+                        <div class="mg-cat-emoji">🔌</div>
+                        <div class="mg-cat-name">Piccoli elettrodomestici</div>
+                        <div class="mg-cat-sub">Ferro, tostapane…</div>
+                    </div>
+                    <div class="mg-cat" data-cat="informatica"
+                        ondragover="event.preventDefault();this.classList.add('over')"
+                        ondragleave="this.classList.remove('over')"
+                        ondrop="mgDrop(event,this)"
+                        onclick="mgTap(this)">
+                        <div class="mg-cat-emoji">💻</div>
+                        <div class="mg-cat-name">Informatica &amp; consumer</div>
+                        <div class="mg-cat-sub">Computer, stampanti…</div>
+                    </div>
+                </div>
+
+                <div id="mg-feedback"></div>
+            </div>
+
+            <div id="mg-end">
+                <h3 id="mg-end-title"></h3>
+                <p id="mg-end-msg"></p>
+                <button onclick="mgRestart()">Rigioca</button>
+            </div>
+        </div>
+        <!-- FINE MINIGAME -->
+
         <a href="index.html" class="back-btn">← TORNA ALLA HOME</a>
     </div>
+
+    <script>
+        var mgItems=[
+            {name:'Smartphone',   emoji:'📱', cat:'informatica'},
+            {name:'Frigorifero',  emoji:'🧊', cat:'grandi'},
+            {name:'Lampada LED',  emoji:'💡', cat:'illuminazione'},
+            {name:'Tostapane',    emoji:'🍞', cat:'piccoli'},
+            {name:'Laptop',       emoji:'💻', cat:'informatica'},
+            {name:'Lavatrice',    emoji:'🫧', cat:'grandi'},
+            {name:'Tubo neon',    emoji:'🔦', cat:'illuminazione'},
+            {name:'Aspirapolvere',emoji:'🌀', cat:'piccoli'},
+            {name:'Stampante',    emoji:'🖨️', cat:'informatica'},
+            {name:'Lavastoviglie',emoji:'🍽️', cat:'grandi'},
+            {name:'Ferro da stiro',emoji:'👔',cat:'piccoli'},
+            {name:'Tablet',       emoji:'📲', cat:'informatica'},
+            {name:'Condizionatore',emoji:'❄️',cat:'grandi'},
+            {name:'Lampadina',    emoji:'🔆', cat:'illuminazione'},
+            {name:'Frullatore',   emoji:'🥤', cat:'piccoli'}
+        ];
+        var mgQueue=[],mgScore=0,mgErrors=0,mgCurrent=null,mgTimer=null,mgTimeLeft=100,mgWaiting=false;
+
+        function mgShuffle(a){return a.sort(function(){return Math.random()-.5;});}
+
+        document.getElementById('mg-start-btn').addEventListener('click',function(){
+            document.getElementById('mg-start-wrap').style.display='none';
+            mgStartGame();
+        });
+
+        function mgStartGame(){
+            mgQueue=mgShuffle(mgItems.slice()).slice(0,10);
+            mgScore=0; mgErrors=0; mgWaiting=false;
+            document.getElementById('mg-score').textContent=0;
+            document.getElementById('mg-errors').textContent=0;
+            document.getElementById('mg-remaining').textContent=10;
+            document.getElementById('mg-end').style.display='none';
+            document.getElementById('mg-play-area').style.display='block';
+            document.getElementById('mg-feedback').textContent='';
+            document.getElementById('mg-feedback').className='';
+            mgNextItem();
+        }
+
+        function mgNextItem(){
+            if(!mgQueue.length){mgEndGame();return;}
+            mgCurrent=mgQueue.shift();
+            mgWaiting=false;
+            document.getElementById('mg-remaining').textContent=mgQueue.length;
+            document.getElementById('mg-emoji').textContent=mgCurrent.emoji;
+            document.getElementById('mg-name').textContent=mgCurrent.name;
+            document.querySelectorAll('.mg-cat').forEach(function(z){z.className='mg-cat';});
+            document.getElementById('mg-feedback').textContent='';
+            document.getElementById('mg-feedback').className='';
+            mgStartTimer();
+        }
+
+        function mgStartTimer(){
+            clearInterval(mgTimer);
+            mgTimeLeft=100;
+            var bar=document.getElementById('mg-timer-bar');
+            bar.style.width='100%';
+            bar.style.background='#519872';
+            mgTimer=setInterval(function(){
+                mgTimeLeft-=2;
+                bar.style.width=Math.max(0,mgTimeLeft)+'%';
+                if(mgTimeLeft<30) bar.style.background='#a93226';
+                else if(mgTimeLeft<60) bar.style.background='#ca6f1e';
+                if(mgTimeLeft<=0){clearInterval(mgTimer);mgTimeExpired();}
+            },100);
+        }
+
+        function mgTimeExpired(){
+            if(mgWaiting)return;
+            mgWaiting=true;
+            mgErrors++;
+            document.getElementById('mg-errors').textContent=mgErrors;
+            var fb=document.getElementById('mg-feedback');
+            fb.textContent='⏱ Tempo scaduto! Era: '+mgGetCatName(mgCurrent.cat);
+            fb.className='err';
+            mgHighlightCorrect(mgCurrent.cat);
+            setTimeout(mgNextItem,1500);
+        }
+
+        function mgDrop(ev,zone){
+            ev.preventDefault();
+            zone.classList.remove('over');
+            if(mgWaiting)return;
+            mgCheck(zone.dataset.cat,zone);
+        }
+
+        function mgTap(zone){
+            if(mgWaiting)return;
+            mgCheck(zone.dataset.cat,zone);
+        }
+
+        function mgCheck(cat,zone){
+            clearInterval(mgTimer);
+            mgWaiting=true;
+            var pts=Math.max(1,Math.round(mgTimeLeft/10));
+            var fb=document.getElementById('mg-feedback');
+            if(cat===mgCurrent.cat){
+                mgScore+=pts;
+                document.getElementById('mg-score').textContent=mgScore;
+                zone.classList.add('correct');
+                fb.textContent='✅ Corretto! +'+pts+' punti';
+                fb.className='ok';
+            } else {
+                mgErrors++;
+                document.getElementById('mg-errors').textContent=mgErrors;
+                zone.classList.add('wrong');
+                fb.textContent='❌ Sbagliato! Era: '+mgGetCatName(mgCurrent.cat);
+                fb.className='err';
+                mgHighlightCorrect(mgCurrent.cat);
+            }
+            setTimeout(mgNextItem,1300);
+        }
+
+        function mgHighlightCorrect(cat){
+            document.querySelectorAll('.mg-cat').forEach(function(z){
+                if(z.dataset.cat===cat) z.classList.add('correct');
+            });
+        }
+
+        function mgGetCatName(cat){
+            var n={grandi:'Grandi elettrodomestici',illuminazione:'Illuminazione',piccoli:'Piccoli elettrodomestici',informatica:'Informatica & consumer'};
+            return n[cat]||cat;
+        }
+
+        function mgEndGame(){
+            clearInterval(mgTimer);
+            document.getElementById('mg-play-area').style.display='none';
+            document.getElementById('mg-end').style.display='block';
+            var correct=10-mgErrors;
+            document.getElementById('mg-end-title').textContent=correct>=9?'Perfetto! 🏆':correct>=7?'Ottimo lavoro! 🎉':correct>=5?'Bel tentativo! 👍':'Riprova! 💪';
+            document.getElementById('mg-end-msg').textContent='Hai smistato correttamente '+correct+' oggetti su 10, guadagnando '+mgScore+' punti con '+mgErrors+' errori.';
+        }
+
+        function mgRestart(){
+            document.getElementById('mg-end').style.display='none';
+            mgStartGame();
+        }
+
+        var mgCard=document.getElementById('mg-card');
+        mgCard.addEventListener('dragstart',function(){mgCard.classList.add('dragging');});
+        mgCard.addEventListener('dragend',function(){mgCard.classList.remove('dragging');});
+    </script>
 </body>
 </html>

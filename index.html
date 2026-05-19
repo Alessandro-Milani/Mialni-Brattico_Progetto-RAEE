@@ -3,45 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I RAEE</title>
+    <title>I RAEE - Home</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <style>
+        /* Stili condivisi */
+        body { background-color: #519872; font-family: sans-serif; }
+        .mySlides { display: none; }
+        .nav-btn { display: block; width: 100%; margin: 8px 0; padding: 14px; font-size: 1.1em; font-weight: bold; background-color: #bec5ad; border: none; cursor: pointer; text-align: left; text-decoration: none; color: black; }
+        .nav-btn:hover { background-color: #a8b09a; }
+        .content-box { background-color: #bec5ad; padding: 16px 20px; margin: 12px 0; }
+        h2.page-title { background-color: #bec5ad; text-align: center; margin: 0; padding: 10px 0; }
+    </style>
 </head>
-<style>
-    .mySlides {display:none;}
-</style>
-<body style="background-color: #519872;">
-<h2 class="w3-center" style="background-color: #bec5ad;">I RAEE</h2>
- 
-<div class="w3-content w3-display-container">
-<img class="mySlides" src="IMG 1 RAEE.jpg" style="width: 100%; height: 350px; object-fit: cover;">
-<img class="mySlides" src="IMG 2 RAEE.jpg" style="width: 100%; height: 350px; object-fit: cover;">
-<img class="mySlides" src="IMG 3 RAEE.jpg" style="width: 100%; height: 350px; object-fit: cover;">
-<img class="mySlides" src="img4 raee.jpg" style="width: 100%; height: 350px; object-fit: cover;">
-<img class="mySlides" src="img 5 raee.jpg" style="width: 100%; height: 350px; object-fit: cover;">
+<body>
 
-<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    <h2 class="page-title">I RAEE</h2>
+
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="IMG 1 RAEE.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="mySlides" src="IMG 2 RAEE.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="mySlides" src="IMG 3 RAEE.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="mySlides" src="img4 raee.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="mySlides" src="img 5 raee.jpg" style="width:100%; height:350px; object-fit:cover;">
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <div class="w3-container content-box">
+        <p>Sapevi che <strong>18 milioni di bambini e adolescenti</strong> rischiano la vita ogni giorno lavorando tra i rifiuti elettronici?<br>Vuoi saperne di più sui RAEE?</p>
+    </div>
+
+<div class="w3-row-padding" style="padding: 12px 16px;">
+    <div class="w3-third">
+        <a href="che_cosa_sono.html" class="nav-btn" style="text-align: center;">🔌 &nbsp; Che cosa sono</a>
+    </div>
+    
+    <div class="w3-third">
+        <a href="come_smaltirli.html" class="nav-btn" style="text-align: center;">♻️ &nbsp; Come smaltirli</a>
+    </div>
+    
+    <div class="w3-third">
+        <a href="curiosita.html" class="nav-btn" style="text-align: center;">🎊 &nbsp; Curiosità</a>
+    </div>
 </div>
- 
-<script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
 
-    function plusDivs(n) {
-    showDivs(slideIndex += n);
-    }
-
-    function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-    }
-    x[slideIndex-1].style.display = "block";  
-    }
-</script>
- 
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        function plusDivs(n) { showDivs(slideIndex += n); }
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
+            x[slideIndex-1].style.display = "block";
+        }
+    </script>
 </body>
 </html>

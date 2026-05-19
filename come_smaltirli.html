@@ -13,6 +13,10 @@
         .back-btn { display: inline-block; margin: 20px 0 10px; padding: 10px 24px; background-color: #bec5ad; border: none; font-weight: bold; cursor: pointer; text-decoration: none; color: black; }
         h2.page-title { background-color: #bec5ad; text-align: center; margin: 0; padding: 10px 0; }
         h3 { color: #2e5e3e; }
+        .back-btn:hover {
+            background-color: #a8b094;
+            transform: translateY(-3px);
+        }
 
         /* ── MINIGAME ── */
         #minigame { background-color: #bec5ad; padding: 16px 20px; margin: 12px 0; }
@@ -151,9 +155,9 @@ Per i dispositivi con lato più lungo entro 25 cm si può consegnare senza alcun
                 <button onclick="mgRestart()">Rigioca</button>
             </div>
         </div>
-        <!-- FINE MINIGAME -->
-
-        <a href="index.html" class="back-btn">← TORNA ALLA HOME</a>
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-btn">← TORNA ALLA HOME</a>
+        </div>
     </div>
 
     <script>

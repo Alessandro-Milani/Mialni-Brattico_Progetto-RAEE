@@ -6,30 +6,101 @@
     <title>Che cosa sono - RAEE</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <style>
-        body { background-color: #519872; font-family: sans-serif; }
-        .content-box { background-color: #bec5ad; padding: 16px 20px; margin: 12px 0; }
-        .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
-        .pill { background: #519872; color: white; padding: 6px 14px; font-size: 0.9em; font-weight: bold; border-radius: 20px; }
-        .highlight { background-color: #519872; color: white; padding: 14px 18px; margin: 12px 0; border-left: 5px solid #2e5e3e; }
-        .back-btn { display: inline-block; margin: 20px 0 10px; padding: 10px 24px; background-color: #bec5ad; border: none; font-weight: bold; cursor: pointer; text-decoration: none; color: black; }
-        h2.page-title { background-color: #bec5ad; text-align: center; margin: 0; padding: 10px 0; }
+        body { 
+            background-color: #519872; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+                 "Segoe UI", Roboto, "Helvetica Neue", Arial, 
+                 sans-serif;
+        }
+        .content-box { 
+            background-color: #bec5ad; 
+            padding: 16px 20px; 
+            margin: 12px 0; 
+        }
+        .cards-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        .card {
+            width: 180px;
+            background-color: #f1f3eb;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .highlight { 
+            background-color: #519872; 
+            color: white; 
+            padding: 14px 18px; 
+            margin: 12px 0; 
+            border-left: 5px solid #2e5e3e; 
+        }
+        .back-btn { 
+            display: inline-block; 
+            margin: 20px 0 10px; 
+            padding: 10px 24px; 
+            background-color: #bec5ad; 
+            border: none; 
+            font-weight: bold; 
+            cursor: pointer; 
+            text-decoration: none; 
+            color: black; 
+        }
+        .back-btn:hover {
+            background-color: #a8b094;
+            transform: translateY(-3px);
+        }
+        h2.page-title { 
+            background-color: #bec5ad; 
+            text-align: center; 
+            margin: 0; 
+            padding: 10px 0;
+            
+        }
     </style>
 </head>
 <body>
-    <h2 class="page-title">Che cosa sono</h2>
+    <h2 class="page-title"><strong>Che cosa sono i RAEE</strong></h2>
     <div class="w3-container" style="padding: 16px;">
         <div class="content-box">
             <p>I <strong>RAEE</strong> (Rifiuti di Apparecchiature Elettriche ed Elettroniche) sono apparecchiature giunte a fine vita, guaste o obsolete. Includono:</p>
-            <div class="pill-row">
-                <span class="pill">📱 Smartphone</span> <span class="pill">💻 Computer</span>
-                <span class="pill">📺 Televisori</span> <span class="pill">🏠 Elettrodomestici</span>
-                <span class="pill">💡 Lampadine</span> <span class="pill">🔋 Batterie</span>
+            
+            <!-- === SEZIONE IMMAGINI === -->
+            <div class="cards-row">
+                <div class="card">
+                    <img src="immagini/illuminazione.png" alt="Apparecchi di illuminazione">
+                </div>
+                <div class="card">
+                    <img src="immagini/informatica.png" alt="Informatica e consumer electronics">
+                </div>
+                <div class="card">
+                    <img src="immagini/Piccoli elettrodomestici.png" alt="Piccoli elettrodomestici">
+                </div>
+                <div class="card">
+                    <img src="immagini/Grandi elettrodomestici.png" alt="Grandi elettrodomestici">
+                </div>
             </div>
         </div>
+
         <div class="highlight">
             ⚠️ Contengono sostanze <strong>pericolose</strong> come piombo, mercurio e cadmio: non gettarli nei rifiuti ordinari!
         </div>
-        <a href="index.html" class="back-btn">← TORNA ALLA HOME</a>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="index.html" class="back-btn">← TORNA ALLA HOME</a>
+        </div>
     </div>
 </body>
 </html>

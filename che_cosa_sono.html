@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Che cosa sono - RAEE</title>
+    <title>I RAEE - Che cosa sono</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <style>
         body {
@@ -14,13 +14,13 @@
                 sans-serif;
         }
 
-        .content-box {
+        .riquadro-contenuto {
             background-color: #bec5ad;
             padding: 16px 20px;
             margin: 12px 0;
         }
 
-        .cards-row {
+        .riga-schede {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
@@ -28,7 +28,7 @@
             margin: 15px 0;
         }
 
-        .card {
+        .scheda {
             width: 100px;
             background-color: #f1f3eb;
             border-radius: 16px;
@@ -36,13 +36,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .card img {
+        .scheda img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        .highlight {
+        .avviso {
             background-color: #519872;
             color: white;
             padding: 14px 18px;
@@ -50,7 +50,7 @@
             border-left: 5px solid #2e5e3e;
         }
 
-        .back-btn {
+        .btn-indietro {
             display: inline-block;
             margin: 20px 0 10px;
             padding: 10px 24px;
@@ -62,57 +62,80 @@
             color: black;
         }
 
-        .back-btn:hover {
+        .btn-indietro:hover {
             background-color: #a8b094;
             transform: translateY(-3px);
         }
 
-        h2.page-title {
+        .contenitore-video {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin: 12px 0;
+        }
+
+        .contenitore-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        h2.titolo-pagina {
             background-color: #bec5ad;
             text-align: center;
             margin: 0;
             padding: 10px 0;
-
         }
     </style>
 </head>
 
 <body>
-    <h2 class="page-title"><strong>Che cosa sono i RAEE</strong></h2>
+    <h2 class="titolo-pagina"><strong>Che cosa sono i RAEE</strong></h2>
     <div class="w3-container" style="padding: 16px;">
-        <div class="content-box">
+        <div class="riquadro-contenuto">
             <p>I <strong>RAEE</strong> (Rifiuti di Apparecchiature Elettriche ed Elettroniche) sono apparecchiature
                 giunte a fine vita, guaste o obsolete. Includono:</p>
 
-            
-            <div class="cards-row">
-                <div class="card">
-                    <img src="img/illuminazione.png" alt="Apparecchi di illuminazione" >
+            <div class="riga-schede">
+                <div class="scheda">
+                    <img src="img/illuminazione.png" alt="Apparecchi di illuminazione">
                 </div>
-                <div class="card">
+                <div class="scheda">
                     <img src="img/informatica.png" alt="Informatica e consumer electronics">
                 </div>
-                <div class="card">
+                <div class="scheda">
                     <img src="img/Piccoli elettrodomestici.png" alt="Piccoli elettrodomestici">
                 </div>
-                <div class="card">
+                <div class="scheda">
                     <img src="img/Grandi elettrodomestici.png" alt="Grandi elettrodomestici">
                 </div>
             </div>
         </div>
 
-        <div class="highlight">
+        <div class="contenitore-video">
+            <iframe
+                width="640"
+                height="360"
+                src="https://www.youtube.com/embed/SVB1Crqtcis"
+                title="Video RAEE"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="avviso">
             ⚠️ Contengono sostanze <strong>pericolose</strong> come piombo, mercurio e cadmio: non gettarli nei rifiuti
             ordinari!
         </div>
 
         <div style="text-align: center; margin: 30px 0;">
-            <a href="index.html" class="back-btn">← TORNA ALLA HOME</a>
+            <a href="index.html" class="btn-indietro">← TORNA ALLA HOME</a>
         </div>
     </div>
-    <video width="640" height="360" controls>
-        <source src="https://www.youtube.com/watch?v=SVB1Crqtcis" type="video/webm">
-    </video>
 
 </body>
 

@@ -6,63 +6,63 @@
     <title>I RAEE - Home</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <style>
-        
         body { background-color: #519872; font-family: sans-serif; }
-        .mySlides { display: none; }
-        .nav-btn { display: block; width: 100%; margin: 8px 0; padding: 14px; font-size: 1.1em; font-weight: bold; background-color: #bec5ad; border: none; cursor: pointer; text-align: left; text-decoration: none; color: black; }
-        .nav-btn:hover { background-color: #a8b09a; }
-        .content-box { background-color: #bec5ad; padding: 16px 20px; margin: 12px 0; }
-        h2.page-title { background-color: #bec5ad; text-align: center; margin: 0; padding: 10px 0; }
+        .diapositiva { display: none; }
+        .btn-navigazione { display: block; width: 100%; margin: 8px 0; padding: 14px; font-size: 1.1em; font-weight: bold; background-color: #bec5ad; border: none; cursor: pointer; text-align: left; text-decoration: none; color: black; }
+        .btn-navigazione:hover { background-color: #a8b09a; }
+        .riquadro-contenuto { background-color: #bec5ad; padding: 16px 20px; margin: 12px 0; }
+        h2.titolo-pagina { background-color: #bec5ad; text-align: center; margin: 0; padding: 10px 0; }
     </style>
 </head>
 <body>
 
-    <h2 class="page-title"><strong>I RAEE</strong></h2>
+    <h2 class="titolo-pagina"><strong>I RAEE</strong></h2>
 
     <div class="w3-content w3-display-container">
-        <img class="mySlides" src="img/img 1.jpg" style="width:100%; height:350px; object-fit:cover;">
-        <img class="mySlides" src="img/img 2.jpg" style="width:100%; height:350px; object-fit:cover;">
-        <img class="mySlides" src="img/img 3.jpg" style="width:100%; height:350px; object-fit:cover;">
-        <img class="mySlides" src="img/img 4.jpg" style="width:100%; height:350px; object-fit:cover;">
-        <img class="mySlides" src="img/img 5.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="diapositiva" src="img/img 1.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="diapositiva" src="img/img 2.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="diapositiva" src="img/img 3.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="diapositiva" src="img/img 4.jpg" style="width:100%; height:350px; object-fit:cover;">
+        <img class="diapositiva" src="img/img 5.jpg" style="width:100%; height:350px; object-fit:cover;">
 
-        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        <button class="w3-button w3-black w3-display-left" onclick="scorriDiapositive(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="scorriDiapositive(1)">&#10095;</button>
     </div>
 
-    <div class="w3-container content-box">
+    <div class="w3-container riquadro-contenuto">
         <p>Sapevi che <strong>18 milioni di bambini e adolescenti</strong> rischiano la vita ogni giorno lavorando tra i rifiuti elettronici?<br>Vuoi saperne di più sui RAEE?</p>
     </div>
 
-<div class="w3-row-padding" style="padding: 12px 16px;">
-    <div class="w3-third">
-        <a href="che_cosa_sono.html" class="nav-btn" style="text-align: center;">🔌Che cosa sono</a>
+    <div class="w3-row-padding" style="padding: 12px 16px;">
+        <div class="w3-third">
+            <a href="che_cosa_sono.html" class="btn-navigazione" style="text-align: center;">🔌 Che cosa sono</a>
+        </div>
+        <div class="w3-third">
+            <a href="come_smaltirli.html" class="btn-navigazione" style="text-align: center;">♻️ Come smaltirli</a>
+        </div>
+        <div class="w3-third">
+            <a href="curiosità.html" class="btn-navigazione" style="text-align: center;">🎊 Curiosità</a>
+        </div>
     </div>
-    
-    <div class="w3-third">
-        <a href="come_smaltirli.html" class="nav-btn" style="text-align: center;">♻️ Come smaltirli</a>
-    </div>
-    
-    <div class="w3-third">
-        <a href="curiosità.html" class="nav-btn" style="text-align: center;">🎊Curiosità</a>
-    </div>
-</div>
 
     <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-        function plusDivs(n) { showDivs(slideIndex += n); }
-        function showDivs(n) {
+        var indiceDiapositiva = 1;
+        mostraDiapositiva(indiceDiapositiva);
+
+        function scorriDiapositive(n) { mostraDiapositiva(indiceDiapositiva += n); }
+
+        function mostraDiapositiva(n) {
             var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) { x[i].style.display = "none"; }
-            x[slideIndex-1].style.display = "block";
+            var diapositive = document.getElementsByClassName("diapositiva");
+            if (n > diapositive.length) { indiceDiapositiva = 1; }
+            if (n < 1) { indiceDiapositiva = diapositive.length; }
+            for (i = 0; i < diapositive.length; i++) { diapositive[i].style.display = "none"; }
+            diapositive[indiceDiapositiva - 1].style.display = "block";
         }
     </script>
-<div class="w3-container" style="padding: 20px 16px 30px 16px;">
-        <div class="content-box" style="background-color: #d4d9c7; font-size: 0.85em;">
+
+    <div class="w3-container" style="padding: 20px 16px 30px 16px;">
+        <div class="riquadro-contenuto" style="background-color: #d4d9c7; font-size: 0.85em;">
             <h3 style="margin-top: 0; color: #2e5e3e;">Fonti</h3>
             <ul style="padding-left: 20px; line-height: 1.5;">
                 <li>Centro di Coordinamento RAEE - CdC RAEE</li>
